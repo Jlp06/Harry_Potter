@@ -2,71 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basic Project</title>
+    <title>Harrry Potter Theme Room</title>
     <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component@1.3.2/dist/aframe-environment-component.min.js"></script>
-    <script src="https://raw.githubusercontent.com/pjoulot/a-door/master/dist/aframe-door.min.js"></script>
-
 </head>
 <body>
-    <a-scene light="defaultLightsEnabled: true">
+    <a-scene>
         <a-assets>
-            <img id="Wall1" src="Asset/ReclaimedTileWall.jpg">
-            <img id="Wall2" src="Asset/Wall_Stone.jpg">
-            <img id="Floor1" src="Asset/TexturesCom_Pavement_StoneGreen_header.jpg">
-            <img id="Floor2" src="Asset/TexturesCom_Pavement_StoneGreen_header2.jpg">
-            <img id="Frame1" src="Asset/StarryNight.jpg">
-            <img id="Frame2" src="Asset/Butterfly.jpg">
-            <img id="Frame3" src="Asset/Girl.jpg">
+    
+            <img id="Floor2" src="Asset/TexturesCom_Wood_ParquetHerringbone9_New_2K_albedo.jpg">
             <img id="Image1" src="Asset/muazzam-ali-khan-hogwarts-classroom-00.jpg">
             <img id="Image2" src="Asset/muazzam-ali-khan-hogwarts-classroom-01.jpg">
             <img id="Image3" src="Asset/muazzam-ali-khan-hogwarts-classroom-03.jpg">
-
-            <a-asset-item id="Table1" src="Asset/scene.gltf"></a-asset-item>
-            <a-asset-item id="Table2" src="Asset/Wizard/scene.gltf"></a-asset-item>
-            <a-asset-item id="BookCase" src="Asset/Bookcase/scene.gltf"></a-asset-item>
+            <img id="Roof" src="Asset/GH_Ceiling_GOF.JPG.jpg">
             <a-asset-item id="Chair" src="Asset/Chair/scene.gltf"></a-asset-item>
-            <a-asset-item id="Light" src="Asset/Wall_Light/scene.gltf"></a-asset-item>
-            <a-asset-item id="Mirror1" src="Asset/Mirror1/scene.gltf"></a-asset-item>
-            <a-asset-item id="Mirror2" src="Asset/Mirror2/scene.gltf"></a-asset-item>
             <a-asset-item id="Suitcase" src="Asset/Suitcase/scene.gltf"></a-asset-item>
+            <a-asset-item id="Mirror2" src="Asset/Mirror/scene.gltf"></a-asset-item>
+            <a-asset-item id="Table1" src="Asset/Table1/scene.gltf"></a-asset-item>
+            <a-asset-item id="Table2" src="Asset/Table2/scene.gltf"></a-asset-item>
+            <a-asset-item id="BookCase" src="Asset/Bookcase/scene.gltf"></a-asset-item>
+            <a-asset-item id="Light" src="Asset/Chandelier/scene.gltf"></a-asset-item>
+            
         </a-assets>
+
         <a-box position="0 0 0" scale="55 0.3 55" color="" material="src:#Floor2" height="3" width="3"></a-box>
         <a-box position="-8.948 10.710 -13.960" scale="20 10 0.1" color="" material="src:#Image2" height="2" width="2"></a-box>
         <a-box position="-8.983 10.822 26.143" scale="20 10 0.1" color="" material="src:#Image3" height="2" width="2"></a-box>
-        <!-- <a-box position="29.939 15.466 0" scale="20 10 0.1" color="" rotation="0 90 0" material="src:#Wall1" height="3" width="3"></a-box> -->
         <a-box position="-28.811 10.803 6.059" scale="20 10 0.1" rotation="0 90 0" material="src:#Image1" height="2" width="2"></a-box>
+        <a-box position="-1.502 21.270 0" scale="55 0.3 55" color="" rotation="0 360 0" material="src:#Roof" height="3" width="3"></a-box>
 
-      <!-- Photo frame
-      <a-box color="white" width="8" height="4.5" depth="0.2" position="4.023 11.597 29.422" material="src:#Frame2"></a-box>  -->
-      <a-box color="white" width="8" height="4.5" depth="0.2" position="0 10.839 -29.054" material="src:#Frame3"></a-box>
-      <!-- <a-box color="white" width="8" height="4.5" depth="0.2" position="28.259 10.983 0" rotation="0 90 0" material="src:#Frame1"></a-box> -->
-
-      <!--Door-->
-      <a-entity id="door" door="width:10; height: 5; color:#4D4437; depth: 0.25; type: double; open_direction: left;" position="-10 4.85 0" scale="10 10 10"></a-entity>
-    <!-- document.querySelectorAll('#door').forEach(function(door) {door.emit('open');}); -->
-
-        <a-sky src="Asset/Starry_Night.png" rotation="0 90 0"></a-sky>
+        <a-camera position="0 9.25 -2" class="subm"><a-cursor></a-cursor></a-camera>
 
         <!--Environment-->
         <a-entity environment="preset: default; groundColor: #445; grid: cross"></a-entity>
 
-        <!--Sound Component-->
-        <a-assets>
-            <audio id="close_sound" src="close_sound.mp3" preload="auto"></audio>
-        </a-assets>
-        <a-entity door="close_sound: #close_sound;"></a-entity>
-
-        <!--Imported models-->
-        <a-entity gltf-model="#Table1" position="-16.351 0.825 6.291" scale="2 2 2"></a-entity>
-        <a-entity gltf-model="#Table2" position="-16.609 4.019 15.827" rotation="0 90 0" scale="2 2 2"></a-entity>
-        <a-entity gltf-model="#BookCase" position="-24.220 0.595 -5.432" rotation="0 90 0" scale="6 6 6"></a-entity>
+        <!--Models-->
         <a-entity gltf-model="#Chair" position="-24.043 4.664 16.169" rotation="0 -90 0" scale="4 4 4"></a-entity>
         <a-entity gltf-model="#Suitcase" position="-7.348 0.560 21.559" scale="-0.080 0.040 -0.070"></a-entity>
         <a-entity gltf-model="#Mirror2" position="-1.081 0.211 24.884" scale="-0.030 0.060 -0.040"></a-entity>
-       
+        <a-entity gltf-model="#Table1" position="-16.351 0.825 6.291" scale="2 2 2"></a-entity>
+        <a-entity gltf-model="#Table2" position="-16.609 4.019 15.827" rotation="0 90 0" scale="2 2 2"></a-entity>
+        <a-entity gltf-model="#BookCase" position="-24.220 0.595 -5.432" rotation="0 90 0" scale="6 6 6"></a-entity>
+        <a-entity gltf-model="#Light" position="-2.763 16.806 2.079" rotation="" scale="2 2 2"></a-entity>
+        
     </a-scene>
+    
 </body>
 </html>
